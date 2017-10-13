@@ -1,0 +1,25 @@
+{
+  "name": "nextlaunch.io",
+  "version": "1.0.0",
+  "description": "Small API to retrieve the next SpaceX launch time",
+  "main": "index.js",
+  "homepage": "https://nextlaunch.io",
+  "repository": "https://github.com/mdcarter/nextlaunch.io",
+  "author": "Maxime Dehaye <maxime.dehaye@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "micro",
+    "dev": "micro-dev",
+    "test": "standard && micro",
+    "deploy": "now"
+  },
+  "dependencies": {
+    "date-fns": "1.29.0",
+    "micro": "9.0.0",
+    "webscrape": "1.4.0"
+  },
+  "devDependencies": {
+    "micro-dev": "1.2.3",
+    "standard": "*"
+  }
+}

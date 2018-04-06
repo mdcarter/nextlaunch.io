@@ -1,7 +1,7 @@
 {
   "name": "nextlaunch.io",
   "version": "1.0.0",
-  "description": "Small API to retrieve the next SpaceX launch time",
+  "description": "Get informations about SpaceX upcoming and completed launches",
   "main": "index.js",
   "homepage": "https://nextlaunch.io",
   "repository": "https://github.com/mdcarter/nextlaunch.io",
@@ -10,22 +10,34 @@
   "scripts": {
     "start": "micro",
     "dev": "micro-dev",
-    "test": "standard && micro",
-    "deploy": "now"
+    "deploy": "now && now alias"
   },
   "dependencies": {
-    "date-fns": "1.29.0",
-    "micro": "9.0.0",
-    "webscrape": "1.4.0"
+    "dotenv": "5.0.1",
+    "ioredis": "3.2.2",
+    "micro": "9.1.4",
+    "microrouter": "3.1.1",
+    "node-fetch": "2.1.2"
   },
   "devDependencies": {
-    "micro-dev": "1.2.3",
-    "standard": "*"
+    "husky": "0.14.3",
+    "micro-dev": "2.2.2",
+    "now": "11.0.1",
+    "standard": "11.0.1"
   },
   "now": {
     "alias": "nextlaunch.io",
     "env": {
-      "NODE_ENV": "production"
+      "NODE_ENV": "production",
+      "DATA_URL": "@next-launch-data-url",
+      "REDIS_HOST": "@next-launch-redis-host",
+      "REDIS_PASSWORD": "@next-launch-redis-password",
+      "REDIS_PORT": "@next-launch-redis-port"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "standard --fix"
     }
   }
 }

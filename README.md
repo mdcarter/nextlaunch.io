@@ -1,7 +1,7 @@
 # Nextlaunch.io
 > When is the next SpaceX launch occuring ?
 
-Nextlaunch.io use [SpaceXNow](https://spacexnow.com) for its data
+Nextlaunch.io use [SpaceX-API](https://github.com/r-spacex/SpaceX-API) for its data
 
 
 ## Getting started

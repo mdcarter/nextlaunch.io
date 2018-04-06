@@ -30,7 +30,7 @@ module.exports = async (req, res) => {
     return {
       id: flight.flight_number,
       name: payloads.reduce((name, payload) => `${name}, ${payload.payload_id}`, '').substr(2),
-      date: flight.launch_date_utc,
+      date: new Date(flight.launch_date_utc).getTime(),
       video: flight.links.video_link || null,
       patch: flight.links.mission_patch || null,
       rocket: {
@@ -41,7 +41,7 @@ module.exports = async (req, res) => {
         landing: landings.length ? landings.map(core => core.landing_vehicle) : false,
         cores: cores.length
       },
-      payloads: {
+      payload: {
         orbit: [...new Set(payloads.map(load => load.orbit))].reduce((orbit, load) => `${orbit}, ${orbits[load] || load}`, '').substr(2),
         customers: payloads.reduce((customers, load) => `${customers}, ${load.customers.join(', ')}`, '').substr(2)
       }

@@ -10,7 +10,7 @@
   "scripts": {
     "start": "micro",
     "dev": "micro-dev",
-    "deploy": "now && now alias"
+    "deploy": "now"
   },
   "dependencies": {
     "dotenv": "5.0.1",

@@ -9,7 +9,7 @@ const orbits = {
   'GTO': 'Geosynchronous Transfer'
 }
 
-module.exports = async (req, res) => {
+module.exports = async (_, res) => {
   const url = `${process.env.DATA_URL}/launches/upcoming`
   const key = 'nextlaunch:upcoming'
 

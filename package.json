@@ -17,7 +17,7 @@
     "ioredis": "3.2.2",
     "micro": "9.1.4",
     "microrouter": "3.1.1",
-    "node-fetch": "2.1.2"
+    "node-fetch": "2.6.1"
   },
   "devDependencies": {
     "husky": "0.14.3",
